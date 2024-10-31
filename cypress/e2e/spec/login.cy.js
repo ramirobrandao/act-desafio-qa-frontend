@@ -15,12 +15,12 @@ describe('Login', () => {
     });
 
     //cenário de sucesso
-    it.only('Login com sucesso', () => {
+    it('Login com sucesso', () => {
         loginPage.loginUsuario()
         loginPage.loginSenha()
         loginPage.entrar()
         //validações de login
-        homePage.validarTxtWelcome().should('have.text', "Bem Vindo Ramiro")
+        cy.contains('h1', "Bem Vindo Ramiro Brandão")
         homePage.validarTxt().should('have.text', "Este é seu sistema para administrar seu ecommerce.")
 
         homePage.validarBtnLogout().should('be.visible')

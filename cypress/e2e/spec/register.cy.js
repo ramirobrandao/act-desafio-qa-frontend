@@ -24,15 +24,24 @@ describe('Login', () => {
         registerPage.campoPassword()
         registerPage.checkboxTrue()
         registerPage.linkCadastro()
-        cy.wait(7) //aguarda 7 segundos para esperar o redirecionamento para home page
 
-        //validações de cadastro
+        //validações de alert com mensagem de cadastro
         cy.on('window:alert', (alertText) => {
             expect(alertText).to.equal('Cadastro realizado com sucesso');
         });
 
+        cy.wait(1000) //aguardar 1 segundo depois do alert para redirecionar para home 
         homePage.validarBtnLogout().should('be.visible')
-        homePage.validarURL().should('contain', '/admin/home')
+        homePage.validarTxtWelcome().should('be.visible')
+        homePage.validarTxt().should('be.visible')
+
+        //validações dos botões home 
+        homePage.validarBtnCadastrarUsuarios().should('be.visible')
+        homePage.validarBtnListarUsuarios().should('be.visible')
+        homePage.validarBtnCadastrarProdutos().should('be.visible')
+        homePage.validarBtnListarProdutos().should('be.visible')
+        homePage.validarBtnReports().should('be.visible')
+
     })
 
     //cenários sem sucesso
@@ -40,23 +49,18 @@ describe('Login', () => {
         registerPage.btnCadastro()
 
         //validações campos nome, usuário e senha em branco 
-        cy.on('window:alert', (alertText) => {
-            expect(alertText).to.equal('Nome é obrigatório');
-            expect(alertText).to.equal('Email é obrigatório');
-            expect(alertText).to.equal('Password é obrigatório');
-        });
-
+        cy.contains('span', "Nome é obrigatório")
+        cy.contains('span', "Email é obrigatório")
+        cy.contains('span', "Password é obrigatório")
     })
+
     it('cadastro de usuário campos email e senha em branco', () => {
         registerPage.campoNome()
         registerPage.btnCadastro()
 
         //validações campos email e senha em branco 
-        cy.on('window:alert', (alertText) => {
-            expect(alertText).to.equal('Email é obrigatório');
-            expect(alertText).to.equal('Password é obrigatório');
-        });
-
+        cy.contains('span', "Email é obrigatório")
+        cy.contains('span', "Password é obrigatório")
     })
 
     it('cadastro de usuário campos nome e senha em branco', () => {
@@ -64,11 +68,8 @@ describe('Login', () => {
         registerPage.btnCadastro()
 
         //validações campos nome e senha em branco 
-        cy.on('window:alert', (alertText) => {
-            expect(alertText).to.equal('Nome é obrigatório');
-            expect(alertText).to.equal('Password é obrigatório');
-        });
-
+        cy.contains('span', "Nome é obrigatório")
+        cy.contains('span', "Password é obrigatório")
     })
 
     it('cadastro de usuário campos nome e email em branco', () => {
@@ -76,10 +77,7 @@ describe('Login', () => {
         registerPage.btnCadastro()
 
         //validações campos nome e email em branco 
-        cy.on('window:alert', (alertText) => {
-            expect(alertText).to.equal('Nome é obrigatório');
-            expect(alertText).to.equal('Email é obrigatório');
-        });
-
+        cy.contains('span', "Nome é obrigatório")
+        cy.contains('span', "Email é obrigatório")
     })
 })

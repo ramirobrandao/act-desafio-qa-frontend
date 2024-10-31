@@ -5,6 +5,10 @@ class LoginPage {
         cy.visit('/');
     }
 
+    validarURL() {
+        return cy.url();
+    }
+
     loginUsuario(usuarioLogin) {
         cy.get('#email').type('ramirobrandao@outlook.com')
     }
@@ -22,23 +26,15 @@ class LoginPage {
     }
 
     entrar() {
-        cy.get('[data-testid="entrar"]').click()
+        return cy.get('[data-testid="entrar"]').click()
     }
 
     validarLogin() {
         return cy.get('.product_label');
     }
 
-    validarListaProdutos() {
-        return cy.get('#inventory_container');
-    }
-
     validarMessagensErro() {
         return cy.get('alert alert-secondary alert-dismissible')
-    }
-
-    validarURL() {
-        return cy.url();
     }
 }
 

@@ -8,7 +8,7 @@ describe('Login', () => {
     const loginPage = new LoginPage();
     const homePage = new HomePage();
 
-    //asar o site cesantes de executar cada cenário
+    //acessar o site cesantes de executar cada cenário
     beforeEach(() => {
         loginPage.visit()
     });

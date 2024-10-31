@@ -1,6 +1,9 @@
 /// <reference types="cypress"/>
 
+const randomNumber = Math.floor(Math.random() * 1000) + 1;
+
 class RegisterPage {
+
     visit() {
         cy.visit('/');
     }
@@ -18,7 +21,7 @@ class RegisterPage {
     }
 
     campoEmail(emailCampo) {
-        cy.get('#email').type('ramirobrandao@outlook.com')
+        cy.get('#email').type(`teste${randomNumber}@email.com`)
     }
 
     campoPassword(passwordCampo) {
@@ -27,10 +30,6 @@ class RegisterPage {
 
     checkboxTrue(trueCheckbox) {
         cy.get('#administrador').check();
-    }
-
-    validarMessagensErro() {
-        return cy.get('.alert alert-secondary alert-dismissible')
     }
 
     validarMessagemSucesso() {
