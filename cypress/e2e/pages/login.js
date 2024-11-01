@@ -26,7 +26,7 @@ class LoginPage {
     }
 
     entrar() {
-        return cy.get('[data-testid="entrar"]').click()
+        cy.get('[data-testid="entrar"]').click()
     }
 
     validarLogin() {

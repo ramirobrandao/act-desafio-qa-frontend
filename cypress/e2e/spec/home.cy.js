@@ -4,7 +4,7 @@ import LoginPage from '../pages/login.js';
 import HomePage from '../pages/home.js';
 
 //funcionalidade
-describe('Login', () => {
+describe('Home', () => {
     const loginPage = new LoginPage();
     const homePage = new HomePage();
 

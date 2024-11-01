@@ -5,7 +5,7 @@ import HomePage from '../pages/home.js';
 import RegisterPage from '../pages/register.js';
 
 //funcionalidade
-describe('Login', () => {
+describe('Register', () => {
     const loginPage = new LoginPage();
     const homePage = new HomePage();
     const registerPage = new RegisterPage();
