@@ -8,6 +8,8 @@ Foi implementado a geração de relatórios ricos com gráficos e imagens utiliz
 
 O projeto foi organizado usando estruturas com cenários de sucesso e erro validando o fluxo de usuario administrador no Front ServeRest: Login, Cadastro de usuários, Listagem de usuários, Cadastro de produtos, Listagem de produtos e Relatórios.
 
+![alt text](<Imagem do WhatsApp de 2024-11-01 à(s) 15.39.40_b2c3ad62.jpg>)
+
 ## Documentação dos testes 
 
 - Acessar o link: [Documentação Front ServeRest - BDD](https://github.com/ramirobrandao/act-desafio-qa-frontend/blob/main/cypress/docs/Documenta%C3%A7%C3%A3o%20Front%20ServeRest%20-%20BDD.pdf)  
