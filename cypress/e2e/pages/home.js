@@ -9,6 +9,10 @@ class HomePage {
         return cy.get('[data-testid="logout"]')
     }
 
+    validarTxtWelcome() {
+        return cy.get('.jumbotron')
+    }
+
     validarTxt() {
         return cy.get('.lead')
     }

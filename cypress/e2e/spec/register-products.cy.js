@@ -88,18 +88,6 @@ describe('Register products', () => {
         registerProductsPage.validarURL().should('contain', '/admin/cadastrarprodutos')
     })
 
-    it('cadastro de produtos campos nome, preço e quantidade em branco', () => {
-        registerProductsPage.campoDescription()
-
-        registerProductsPage.clicarBtnCadastroProdutos()
-
-        //validações campos nome, preço e descrição em branco
-        cy.contains('span', "Nome é obrigatório")
-        cy.contains('span', "Preco é obrigatório")
-        cy.contains('span', "Quantidade é obrigatório")
-        registerProductsPage.validarURL().should('contain', '/admin/cadastrarprodutos')
-    })
-
     it('cadastro de produtos campos nome, preço e descrição em branco', () => {
         registerProductsPage.campoQuantity()
 
@@ -109,6 +97,18 @@ describe('Register products', () => {
         cy.contains('span', "Nome é obrigatório")
         cy.contains('span', "Preco é obrigatório")
         cy.contains('span', "Descricao é obrigatório")
+        registerProductsPage.validarURL().should('contain', '/admin/cadastrarprodutos')
+    })
+
+    it('cadastro de produtos campos nome, preço e quantidade em branco', () => {
+        registerProductsPage.campoDescription()
+
+        registerProductsPage.clicarBtnCadastroProdutos()
+
+        //validações campos nome, preço e descrição em branco
+        cy.contains('span', "Nome é obrigatório")
+        cy.contains('span', "Preco é obrigatório")
+        cy.contains('span', "Quantidade é obrigatório")
         registerProductsPage.validarURL().should('contain', '/admin/cadastrarprodutos')
     })
 
