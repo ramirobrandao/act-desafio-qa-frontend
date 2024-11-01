@@ -30,8 +30,8 @@ describe('Register products', () => {
     });
 
     //cenário de sucesso
-    it.only('Cadastro de produto com sucesso', () => {
-        registerProductsPage.campoNome()
+    it('Cadastro de produto com sucesso', () => {
+        registerProductsPage.campoName()
         registerProductsPage.campoPrice()
         registerProductsPage.campoDescription()
         registerProductsPage.campoQuantity()
@@ -41,39 +41,69 @@ describe('Register products', () => {
     })
 
     //cenários sem sucesso
-    it('cadastro de usuário todos os campos em branco ', () => {
-        registerPage.btnCadastro()
+    it('Cadastro de produto já existente', () => {
+        registerProductsPage.campoNameProductExist()
+        registerProductsPage.campoPrice()
+        registerProductsPage.campoDescription()
+        registerProductsPage.campoQuantity()
 
-        //validações campos nome, usuário e senha em branco 
+        registerProductsPage.clicarBtnCadastroProdutos()
+        homePage.validarURL().should('contain', '/admin/cadastrarprodutos')
+    })
+
+    it('cadastro de produtos todos os campos em branco ', () => {
+        registerProductsPage.clicarBtnCadastroProdutos()
+
+        //validações campos nome, preço, descricação e quantidade em branco
         cy.contains('span', "Nome é obrigatório")
-        cy.contains('span', "Email é obrigatório")
-        cy.contains('span', "Password é obrigatório")
+        cy.contains('span', "Preco é obrigatório")
+        cy.contains('span', "Descricao é obrigatório")
+        cy.contains('span', "Quantidade é obrigatório")
+        registerProductsPage.validarURL().should('contain', '/admin/cadastrarprodutos')
     })
 
-    it('cadastro de usuário campos email e senha em branco', () => {
-        registerPage.campoNome()
-        registerPage.btnCadastro()
+    it('cadastro de produtos campos preço, descrição e quantidade em branco', () => {
+        registerProductsPage.campoName()
 
-        //validações campos email e senha em branco 
-        cy.contains('span', "Email é obrigatório")
-        cy.contains('span', "Password é obrigatório")
+        registerProductsPage.clicarBtnCadastroProdutos()
+
+        //validações campos preço, descrição e quantidade em branco
+        cy.contains('span', "Preco é obrigatório")
+        cy.contains('span', "Descricao é obrigatório")
+        cy.contains('span', "Quantidade é obrigatório")
     })
 
-    it('cadastro de usuário campos nome e senha em branco', () => {
-        registerPage.campoEmail()
-        registerPage.btnCadastro()
+    it('cadastro de produtos campos nome, descrição e quantidade em branco', () => {
+        registerProductsPage.campoPrice()
 
-        //validações campos nome e senha em branco 
+        registerProductsPage.clicarBtnCadastroProdutos()
+
+        //validações campos preço, descrição e quantidade em branco
         cy.contains('span', "Nome é obrigatório")
-        cy.contains('span', "Password é obrigatório")
+        cy.contains('span', "Descricao é obrigatório")
+        cy.contains('span', "Quantidade é obrigatório")
     })
 
-    it('cadastro de usuário campos nome e email em branco', () => {
-        registerPage.campoPassword()
-        registerPage.btnCadastro()
+    it('cadastro de produtos campos nome, preço e quantidade em branco', () => {
+        registerProductsPage.campoDescription()
 
-        //validações campos nome e email em branco 
+        registerProductsPage.clicarBtnCadastroProdutos()
+
+        //validações campos nome, preço e descrição em branco
         cy.contains('span', "Nome é obrigatório")
-        cy.contains('span', "Email é obrigatório")
+        cy.contains('span', "Preco é obrigatório")
+        cy.contains('span', "Quantidade é obrigatório")
     })
+
+    it('cadastro de produtos campos nome, preço e descrição em branco', () => {
+        registerProductsPage.campoQuantity()
+
+        registerProductsPage.clicarBtnCadastroProdutos()
+
+        //validações campos nome, preço e descrição 
+        cy.contains('span', "Nome é obrigatório")
+        cy.contains('span', "Preco é obrigatório")
+        cy.contains('span', "Descricao é obrigatório")
+    })
+
 })

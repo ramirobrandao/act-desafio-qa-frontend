@@ -1,5 +1,7 @@
 /// <reference types="cypress"/>
 
+const randomNumber = Math.floor(Math.random() * 1000) + 1;
+
 class RegisterProducts {
     visit() {
         cy.visit('/');
@@ -9,7 +11,11 @@ class RegisterProducts {
         return cy.url();
     }
 
-    campoNome(nomeCampo) {
+    campoName(nameCampo) {
+        cy.get(('[data-testid="nome"]')).type(`${randomNumber}Notebook`)
+    }
+
+    campoNameProductExist(productExist) {
         cy.get(('[data-testid="nome"]')).type('Notebook test')
     }
 
