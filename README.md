@@ -4,17 +4,17 @@ Automação de testes Frontend com Cypress e JavaScript, seguindo boas práticas
 
 Foi configurada uma pipeline (GitHub Actions) de integração contínua CI/CD que executa automaticamente todos os testes do projeto quando é realizado um push na branch main ou quando um pull request é aberto.
 
-Foi implementado a geração de relatórios ricos com gráficos e imagens utilizando a biblioteca do Mochawesome. 🚀
+Foi implementado a geração de relatórios ricos com gráficos e imagens utilizando a biblioteca do Mochawesome. 📊🚀
 
 O projeto foi organizado usando estruturas com cenários de sucesso e erro validando o fluxo de usuario administrador no Front ServeRest: Login, Cadastro de usuários, Listagem de usuários, Cadastro de produtos, Listagem de produtos e Relatórios.
 
-![alt text](<Imagem do WhatsApp de 2024-11-01 à(s) 15.39.40_b2c3ad62.jpg>)
+![alt text](cypress/docs/features_passed.jpg)
 
 ## Documentação dos testes 
 
 - Acessar o link: [Documentação Front ServeRest - BDD](https://github.com/ramirobrandao/act-desafio-qa-frontend/blob/main/cypress/docs/Documenta%C3%A7%C3%A3o%20Front%20ServeRest%20-%20BDD.pdf)  
 
-## Documentação da Front ServeRest
+## Documentação Front ServeRest
 
 - Acessar o link: [Front ServeRest](https://front.serverest.dev/)
 
