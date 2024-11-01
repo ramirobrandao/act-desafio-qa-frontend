@@ -46,8 +46,10 @@ describe('Register products', () => {
         registerProductsPage.campoPrice()
         registerProductsPage.campoDescription()
         registerProductsPage.campoQuantity()
-
         registerProductsPage.clicarBtnCadastroProdutos()
+
+        //valicações produto já cadastrado
+        cy.contains('span', "Já existe produto com esse nome")
         homePage.validarURL().should('contain', '/admin/cadastrarprodutos')
     })
 
@@ -71,6 +73,7 @@ describe('Register products', () => {
         cy.contains('span', "Preco é obrigatório")
         cy.contains('span', "Descricao é obrigatório")
         cy.contains('span', "Quantidade é obrigatório")
+        registerProductsPage.validarURL().should('contain', '/admin/cadastrarprodutos')
     })
 
     it('cadastro de produtos campos nome, descrição e quantidade em branco', () => {
@@ -82,6 +85,7 @@ describe('Register products', () => {
         cy.contains('span', "Nome é obrigatório")
         cy.contains('span', "Descricao é obrigatório")
         cy.contains('span', "Quantidade é obrigatório")
+        registerProductsPage.validarURL().should('contain', '/admin/cadastrarprodutos')
     })
 
     it('cadastro de produtos campos nome, preço e quantidade em branco', () => {
@@ -93,6 +97,7 @@ describe('Register products', () => {
         cy.contains('span', "Nome é obrigatório")
         cy.contains('span', "Preco é obrigatório")
         cy.contains('span', "Quantidade é obrigatório")
+        registerProductsPage.validarURL().should('contain', '/admin/cadastrarprodutos')
     })
 
     it('cadastro de produtos campos nome, preço e descrição em branco', () => {
@@ -104,6 +109,7 @@ describe('Register products', () => {
         cy.contains('span', "Nome é obrigatório")
         cy.contains('span', "Preco é obrigatório")
         cy.contains('span', "Descricao é obrigatório")
+        registerProductsPage.validarURL().should('contain', '/admin/cadastrarprodutos')
     })
 
 })
