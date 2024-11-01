@@ -16,7 +16,7 @@ module.exports = defineConfig({
       "json": true,
       "charts": true,
       "reportFilename": "report",
-      "timestamp": "mmddyyyy_HHMMss",
+      "timestamp": "ddmmyyyy_HHMMss",
       "inlineAssets": true,
       "autoOpen": true,
       "reportPageTitle": "Relatório de execução de testes frontend",
