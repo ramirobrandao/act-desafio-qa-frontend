@@ -1,0 +1,207 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-11-01T03:10:53.107Z",
+    "end": "2024-11-01T03:11:05.292Z",
+    "duration": 12185,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a6a71713-1bb7-4d38-8b62-3e7b1985dcbb",
+      "title": "",
+      "fullFile": "cypress\\e2e\\spec\\login.cy.js",
+      "file": "cypress\\e2e\\spec\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1fe10890-5bd2-4c8e-b846-44c2c8697b8d",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login com sucesso",
+              "fullTitle": "Login Login com sucesso",
+              "timedOut": null,
+              "duration": 4294,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.loginUsuario();\nloginPage.loginSenha();\nloginPage.entrar();\n//validações de login\ncy.contains('h1', \"Bem Vindo Ramiro Brandão\");\nhomePage.validarTxt().should('have.text', \"Este é seu sistema para administrar seu ecommerce.\");\nhomePage.validarBtnLogout().should('be.visible');\nhomePage.validarURL().should('contain', '/admin/home');",
+              "err": {},
+              "uuid": "3d4de149-cd9b-4e5d-ad36-4a3917d363f7",
+              "parentUUID": "1fe10890-5bd2-4c8e-b846-44c2c8697b8d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com usuário e senha vazio",
+              "fullTitle": "Login Login com usuário e senha vazio",
+              "timedOut": null,
+              "duration": 1393,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.entrar();\n//validações usuário e senha vazio\ncy.on('window:alert', alertText => {\n  expect(alertText).to.equal('Email é obrigatório');\n  expect(alertText).to.equal('Password é obrigatório');\n});",
+              "err": {},
+              "uuid": "b2102c07-27b2-4129-9864-3bfadb13b9b4",
+              "parentUUID": "1fe10890-5bd2-4c8e-b846-44c2c8697b8d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com usuário vazio",
+              "fullTitle": "Login Login com usuário vazio",
+              "timedOut": null,
+              "duration": 1466,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.loginSenha();\nloginPage.entrar();\n//validações usuário vazio\ncy.on('window:alert', alertText => {\n  expect(alertText).to.equal('Email é obrigatório');\n});",
+              "err": {},
+              "uuid": "02de237f-5996-46e0-816b-3f67f63ca909",
+              "parentUUID": "1fe10890-5bd2-4c8e-b846-44c2c8697b8d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com senha vazia",
+              "fullTitle": "Login Login com senha vazia",
+              "timedOut": null,
+              "duration": 1412,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.loginUsuario();\nloginPage.entrar();\n//validações senha vazia\ncy.on('window:alert', alertText => {\n  expect(alertText).to.equal('Password é obrigatório');\n});",
+              "err": {},
+              "uuid": "391eda61-c68e-4e1c-be0e-b125140b15a6",
+              "parentUUID": "1fe10890-5bd2-4c8e-b846-44c2c8697b8d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com usuário inválido",
+              "fullTitle": "Login Login com usuário inválido",
+              "timedOut": null,
+              "duration": 1532,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.loginUsuarioInvalido();\nloginPage.loginSenha();\nloginPage.entrar();\n//validações de usuário inválido\ncy.on('window:alert', alertText => {\n  expect(alertText).to.equal('Email e/ou senha inválidos');\n});",
+              "err": {},
+              "uuid": "cf6cbfb9-fd94-4fa1-a690-3bbb59a79e52",
+              "parentUUID": "1fe10890-5bd2-4c8e-b846-44c2c8697b8d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login com senha inválida",
+              "fullTitle": "Login Login com senha inválida",
+              "timedOut": null,
+              "duration": 1872,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.loginUsuario();\nloginPage.loginSenhaInvalida();\nloginPage.entrar();\n//validações de senha inválida\ncy.on('window:alert', alertText => {\n  expect(alertText).to.equal('Email e/ou senha inválidos');\n});",
+              "err": {},
+              "uuid": "d710e30b-316a-4a35-90e2-81a6f36ca17e",
+              "parentUUID": "1fe10890-5bd2-4c8e-b846-44c2c8697b8d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3d4de149-cd9b-4e5d-ad36-4a3917d363f7",
+            "b2102c07-27b2-4129-9864-3bfadb13b9b4",
+            "02de237f-5996-46e0-816b-3f67f63ca909",
+            "391eda61-c68e-4e1c-be0e-b125140b15a6",
+            "cf6cbfb9-fd94-4fa1-a690-3bbb59a79e52",
+            "d710e30b-316a-4a35-90e2-81a6f36ca17e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11969,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "reportFilename": "report",
+        "timestamp": "mmddyyyy_HHMMss",
+        "inlineAssets": true,
+        "autoOpen": true,
+        "reportPageTitle": "Relatório de execução de testes frontend",
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-11-01T03:11:20.490Z",
+    "end": "2024-11-01T03:11:24.704Z",
+    "duration": 4214,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e9252334-f5e5-4128-85dc-5591c70bb8d9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\spec\\reports.cy.js",
+      "file": "cypress\\e2e\\spec\\reports.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "af9ac42a-f9c7-4b19-a018-d23b919c6a72",
+          "title": "Reports",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Visualizar relatórios",
+              "fullTitle": "Reports Visualizar relatórios",
+              "timedOut": null,
+              "duration": 4151,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//ação de clicar e ir página de relatórios\nhomePage.clicarBtnReports();\ncy.contains('h1', \"Em construção aguarde\");\nhomePage.validarURL().should('contain', 'admin/relatorios');",
+              "err": {},
+              "uuid": "a147dc04-9262-46cc-9006-4ccf1d219f55",
+              "parentUUID": "af9ac42a-f9c7-4b19-a018-d23b919c6a72",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a147dc04-9262-46cc-9006-4ccf1d219f55"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4151,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "reportFilename": "report",
+        "timestamp": "mmddyyyy_HHMMss",
+        "inlineAssets": true,
+        "autoOpen": true,
+        "reportPageTitle": "Relatório de execução de testes frontend",
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

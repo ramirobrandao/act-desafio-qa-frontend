@@ -1,0 +1,193 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 4,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-11-01T03:11:08.553Z",
+    "end": "2024-11-01T03:11:17.442Z",
+    "duration": 8889,
+    "testsRegistered": 5,
+    "passPercent": 80,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "35f45f62-50f9-4bf8-83a8-004c47f1d2ae",
+      "title": "",
+      "fullFile": "cypress\\e2e\\spec\\register.cy.js",
+      "file": "cypress\\e2e\\spec\\register.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "64c93255-9f1f-4fbe-9623-9c77eabe363f",
+          "title": "Register",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cadastro de administrador com sucesso",
+              "fullTitle": "Register Cadastro de administrador com sucesso",
+              "timedOut": null,
+              "duration": 2178,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "registerPage.campoNome();\nregisterPage.campoEmail();\nregisterPage.campoPassword();\nregisterPage.checkboxTrue();\nregisterPage.linkCadastro();\n//validações de alert com mensagem de cadastro\ncy.on('window:alert', alertText => {\n  expect(alertText).to.equal('Cadastro realizado com sucesso');\n});\ncy.wait(1000); //aguardar 1 segundo depois do alert para redirecionar para home \nhomePage.validarBtnLogout().should('be.visible');\nhomePage.validarTxtWelcome().should('be.visible');\nhomePage.validarTxt().should('be.visible');\n//validações dos botões home \nhomePage.validarBtnCadastrarUsuarios().should('be.visible');\nhomePage.validarBtnListarUsuarios().should('be.visible');\nhomePage.validarBtnCadastrarProdutos().should('be.visible');\nhomePage.validarBtnListarProdutos().should('be.visible');\nhomePage.validarBtnReports().should('be.visible');",
+              "err": {
+                "message": "TypeError: homePage.validarTxtWelcome is not a function",
+                "estack": "TypeError: homePage.validarTxtWelcome is not a function\n    at Context.eval (webpack://act-desafio-qa-frontend/./cypress/e2e/spec/register.cy.js:35:17)",
+                "diff": null
+              },
+              "uuid": "fda01f71-3ec5-4139-8e0e-ba2f13cce560",
+              "parentUUID": "64c93255-9f1f-4fbe-9623-9c77eabe363f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cadastro de usuário todos os campos em branco ",
+              "fullTitle": "Register cadastro de usuário todos os campos em branco ",
+              "timedOut": null,
+              "duration": 1976,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "registerPage.btnCadastro();\n//validações campos nome, usuário e senha em branco \ncy.contains('span', \"Nome é obrigatório\");\ncy.contains('span', \"Email é obrigatório\");\ncy.contains('span', \"Password é obrigatório\");",
+              "err": {},
+              "uuid": "5fecfcd3-dd6b-4c4e-bce1-e296d773b802",
+              "parentUUID": "64c93255-9f1f-4fbe-9623-9c77eabe363f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cadastro de usuário campos email e senha em branco",
+              "fullTitle": "Register cadastro de usuário campos email e senha em branco",
+              "timedOut": null,
+              "duration": 1629,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "registerPage.campoNome();\nregisterPage.btnCadastro();\n//validações campos email e senha em branco \ncy.contains('span', \"Email é obrigatório\");\ncy.contains('span', \"Password é obrigatório\");",
+              "err": {},
+              "uuid": "ce98bb48-a306-4244-9e10-1caedbae8cbf",
+              "parentUUID": "64c93255-9f1f-4fbe-9623-9c77eabe363f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cadastro de usuário campos nome e senha em branco",
+              "fullTitle": "Register cadastro de usuário campos nome e senha em branco",
+              "timedOut": null,
+              "duration": 1492,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "registerPage.campoEmail();\nregisterPage.btnCadastro();\n//validações campos nome e senha em branco \ncy.contains('span', \"Nome é obrigatório\");\ncy.contains('span', \"Password é obrigatório\");",
+              "err": {},
+              "uuid": "22a8ebca-6238-4295-a8ac-d6676f47f06b",
+              "parentUUID": "64c93255-9f1f-4fbe-9623-9c77eabe363f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cadastro de usuário campos nome e email em branco",
+              "fullTitle": "Register cadastro de usuário campos nome e email em branco",
+              "timedOut": null,
+              "duration": 1411,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "registerPage.campoPassword();\nregisterPage.btnCadastro();\n//validações campos nome e email em branco \ncy.contains('span', \"Nome é obrigatório\");\ncy.contains('span', \"Email é obrigatório\");",
+              "err": {},
+              "uuid": "d2061e7b-9627-4a3b-9543-c1168ddb05ec",
+              "parentUUID": "64c93255-9f1f-4fbe-9623-9c77eabe363f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5fecfcd3-dd6b-4c4e-bce1-e296d773b802",
+            "ce98bb48-a306-4244-9e10-1caedbae8cbf",
+            "22a8ebca-6238-4295-a8ac-d6676f47f06b",
+            "d2061e7b-9627-4a3b-9543-c1168ddb05ec"
+          ],
+          "failures": [
+            "fda01f71-3ec5-4139-8e0e-ba2f13cce560"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8686,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "reportFilename": "report",
+        "timestamp": "mmddyyyy_HHMMss",
+        "inlineAssets": true,
+        "autoOpen": true,
+        "reportPageTitle": "Relatório de execução de testes frontend",
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

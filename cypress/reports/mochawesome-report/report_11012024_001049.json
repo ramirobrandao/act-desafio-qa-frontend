@@ -1,0 +1,112 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-11-01T03:10:44.856Z",
+    "end": "2024-11-01T03:10:49.135Z",
+    "duration": 4279,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6d98c9a8-6c18-4a11-8587-ffe819a43e90",
+      "title": "",
+      "fullFile": "cypress\\e2e\\spec\\list-users.cy.js",
+      "file": "cypress\\e2e\\spec\\list-users.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c71cacdb-80bb-4c3d-aa1e-2c98e483fde5",
+          "title": "list-users",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Visualizar lista dos usuários",
+              "fullTitle": "list-users Visualizar lista dos usuários",
+              "timedOut": null,
+              "duration": 4198,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//ação de clicar e ir lista dos usuários\nhomePage.clicarBtnListarUsuarios();\ncy.contains('h1', \"Lista dos usuários\");\ncy.contains('th', \"Nome\");\ncy.contains('th', \"Email\");\ncy.contains('th', \"Senha\");\ncy.contains('th', \"Administrador\");\ncy.contains('th', \"Ações\");\nlistUsersPage.validarBtnExcluirUsuarios().should('be.visible');\nhomePage.validarURL().should('contain', 'admin/listarusuarios');",
+              "err": {},
+              "uuid": "700822f0-7280-4289-b44a-bfe9f1b3825b",
+              "parentUUID": "c71cacdb-80bb-4c3d-aa1e-2c98e483fde5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "700822f0-7280-4289-b44a-bfe9f1b3825b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4198,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "reportFilename": "report",
+        "timestamp": "mmddyyyy_HHMMss",
+        "inlineAssets": true,
+        "autoOpen": true,
+        "reportPageTitle": "Relatório de execução de testes frontend",
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
