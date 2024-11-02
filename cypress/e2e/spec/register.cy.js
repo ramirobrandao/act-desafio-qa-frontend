@@ -18,7 +18,7 @@ describe('Register', () => {
     });
 
     //cenário de sucesso
-    it.only('Cadastro de administrador com sucesso', () => {
+    it('Cadastro de administrador com sucesso', () => {
         registerPage.campoNome()
         registerPage.campoEmail()
         registerPage.campoPassword()
