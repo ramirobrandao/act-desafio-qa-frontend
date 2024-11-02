@@ -8,7 +8,7 @@ Foi implementado a geração de relatórios ricos com gráficos e imagens utiliz
 
 O projeto foi organizado usando estruturas com cenários de sucesso e erro validando o fluxo de usuario administrador no Front ServeRest: Login, Cadastro de usuários, Listagem de usuários, Cadastro de produtos, Listagem de produtos e Relatórios.
 
-![alt text](cypress/docs/features_passed.jpg)
+![alt text](cypress/docs/features_passed.png)
 
 ## Documentação dos testes 
 
